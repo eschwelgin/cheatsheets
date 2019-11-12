@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang=”en”>
+<head>
+	<meta charset=”utf-8” />
+	<title></title>
+
+	<style>
+		header, section, footer, aside, nav, main, article, figure {
+  		display: block; }
+	</style>
+
+	<!--[if lt IE 9]>
+    		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  	<![endif]-->
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<body>
+	
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href=style.css>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+</body>
+</html>
