@@ -17,84 +17,56 @@
 <body>
 
     <div class="nav">
-        <h1>The137 Cheat Sheets</h1>
-        <img src="assets/js.png" alt="JavaScript Icon">
-        <img src="assets/bs.png" alt="BootStrap Icon">
-        <img src="assets/css.png" alt="CSS Icon">    
-        <img src="assets/html.png" alt="HTML Icon">
-        <img src="assets/git.png" alt="Git Icon">
+        <h1>The137 Cheat Sheets - Git</h1>
+        <a href="#"><img src="assets/js.png" alt="JavaScript Icon"></a>
+        <a href="#"><img src="assets/bs.png" alt="BootStrap Icon"></a>
+        <a href="#"><img src="assets/css.png" alt="CSS Icon"></a>
+        <a href="#"><img src="assets/html.png" alt="HTML Icon"></a>
+        <a href="git.html"><img src="assets/git.png" alt="Git Icon"></a>
     </div>
     
     <h1>Here you will find various cheetsheets and code snippets to help throughout the course</h1>
 
-    <div class="div">
+    <div class="wrap">
         <h2>HTML Base txt</h2>
         <a href="html-base.txt">Click here for HTML Starter</a>
     </div>
 
-    <div class="div">
-        <h2>Basic Git</h2>
-        <h3>Creating a new repo from the command line, or push an existing repo from the command line</h3>
-        <p class="code">
-            Quick setup — if you’ve done this kind of thing before <br/>
-            git@github.com:eschwelgin/test1.git<br/>
-            <br/>
-            …or create a new repository on the command line<br/>
-            echo "# test1" >> README.md<br/>
-            git init<br/>
-            git add README.md<br/>
-            git commit -m "first commit"<br/>
-            git remote add origin git@github.com:eschwelgin/test1.git<br/>
-            git push -u origin master<br/>
-            <br/>
-            …or push an existing repository from the command line<br/>
-            git remote add origin git@github.com:eschwelgin/test1.git<br/>
-            git push -u origin master<br/>
-        </p>
-    </div>
-    <div class="div">
-        <h3>Updating your repo as you work on it (Commit often!)</h3>
-        <p class="code">
-            git status<br/>
-            git add .<br/>
-            git commit -m "message"<br/>
-            git push origin master <br/>
-        </p>
-    </div>
-    <div class="div">
-        <h3>Create a BAT file that runs multiple commands to make commits quicker (Windows)</h3>
-        <ol>
-            <li>Creat a .bat file either using the command line (git bash touch)</li>
-            <li>Add the following commands to the bat file using a text editor or code editor and save the file</li>
-            <li>Store the .bat file in an accessible area (like the root of C:)</li>
-            <li>From the command line navigate to the local folder your repo is stored in</li>
-            <li>Call the .bat file using the entire path (ex: c:/bat-commit.bat)</li>
-            <li>The .bat file will ask you to enter your comment</li>
-            <li>Navigate to your repo's URL to make sure the commit went through</li>
-        </ol>
-        <p class="code">
-            @echo off<br/>
-            git status<br/>
-            set /p comment="Enter Comment and press [ENTER]:"<br/>
-            git add .<br/>
-            git commit -m "%comment%"<br/>
-            git push origin master<br/>
-        </p>
-    </div>
-    <div class="div">
-        <h3>Create a bash script to make commits quicker (Linux)</h3> 
-        <p class="code">
-            #!/bin/bash<br/>
-            git status<br/>
-            echo Enter Comment and press [ENTER]: <br/>
-            read comment<br/>
-            git add .<br/>
-            git commit -m "$comment"<br/>
-            git push origin master<br/>
-        </p>
-        <p>Make sure it is set as executable and run it from the terminal with </p>
-        <p class="code"># bash "filename"</p>
-    </div>
+    <div class="wrap">
+            <h3>Create a BAT file that runs multiple commands to make commits quicker (Windows)</h3>
+            <ol>
+                <li>Creat a .bat file either using the command line (git bash touch)</li>
+                <li>Add the following commands to the bat file using a text editor or code editor and save the file</li>
+                <li>Store the .bat file in an accessible area (like the root of C:)</li>
+                <li>From the command line navigate to the local folder your repo is stored in</li>
+                <li>Call the .bat file using the entire path (ex: c:/bat-commit.bat)</li>
+                <li>The .bat file will ask you to enter your comment</li>
+                <li>Navigate to your repo's URL to make sure the commit went through</li>
+            </ol>
+            <p class="code">
+                @echo off<br/>
+                git status<br/>
+                set /p comment="Enter Comment and press [ENTER]:"<br/>
+                git add .<br/>
+                git commit -m "%comment%"<br/>
+                git push origin master<br/>
+            </p>
+        </div>
+        <div class="wrap">
+            <h2>bash-commit.sh (Linux)</h2> 
+                <p class="code">
+                    #!/bin/bash<br/>
+                    git status<br/>
+                    echo Enter Comment and press [ENTER]: <br/>
+                    read comment<br/>
+                    git add .<br/>
+                    git commit -m "$comment"<br/>
+                    git push origin master<br/>
+                </p>
+                <p>Make sure it is set as executable. If it doesn't want to run, try </p>
+                <p class="code">>bash /path/bash-commit.sh</p>
+        </div>
+    
 
 </body>
 </html>
