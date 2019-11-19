@@ -75,6 +75,21 @@ h3 {
     padding: 20px 20px 20px 20px;
 }
 
+.card {
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    padding: 0px 0px 0px 0px;
+    width: 25%;
+    /* border: 2px solid black; */
+}
+
+.card p > p { /*second paragraph - used for description */
+}
+
+.card > p { /*first paragraph - used for code */
+
+}
+
 /* different unordered list classes for different code - some replace the dot with a # for linux commands, others will help with html and other code */ 
 /* nav with main sections - html css git bootstrap */
 /* media query that changes the nav section to a hamburger menu on mobile */
