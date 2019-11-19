@@ -21,6 +21,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="style.css" >
 
+    <!-- Bring in Custom Fonts Here -->
+
     <!-- Custom JavaScript -->
     <script src="main.js"></script>
 
