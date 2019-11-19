@@ -341,10 +341,245 @@
 
 <h3>git config</h3>
 
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git config --global user.name [name]
+        </p>
+        <p>
+            Define the author name to be used for all commits by the current user.
+        </p>
+    </div>
 
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git config --global user.email [email]
+        </p>
+        <p>
+            Define the author email to be used for all commits by the current user.
+        </p>
+    </div>
 
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git config --global alias.[alias-name] [git-command]
+        </p>
+        <p>
+            Create shortcut for a Git command. E.g. alias.glog log --graph
+            --oneline will set git glog equivalent to git log --graph --oneline.
+        </p>
+    </div>
 
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git config --system core.editor [editor]
+        </p>
+        <p>
+            Set text editor used by commands for all users on the machine. [editor]
+             should be the command that launches the desired editor (e.g., vi).
+        </p>
+    </div>
 
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git config --global --edit
+        </p>
+        <p>
+            Open the global configuration file in a text editor for manual editing.
+        </p>
+    </div>
 
+<h3>git log</h3>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log -[limit]
+        </p>
+        <p>
+            Limit number of commits, e.g. git log -5 will limit to 5 commits 
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log --oneline
+        </p>
+        <p>
+            Condense each commit to a single line 
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log -p
+        </p>
+        <p>
+            Display the full diff of each commit 
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log --stat
+        </p>
+        <p>
+            Include which files were altered and the relative number of lines that were added of deleted from each of them
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log --author=[pattern]
+        </p>
+        <p>
+            Search for commits by a particular author
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log --grep="[pattern]"
+        </p>
+        <p>
+            Search for commits with a commit message of [pattern]
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log [since]..[until]
+        </p>
+        <p>
+            Show commits that occur between [since] and [until]. Arguments can be a
+            commit ID, branch name, Head, or any other kind of revision reference.
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log --[file]
+        </p>
+        <p>
+            only display commits that have the specified file 
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git log --graph --decorate
+        </p>
+        <p>
+            --graph flag draws a text based graph of commits on left side of commit messages. --decorate flag adds names of branches or tags of commits shown
+        </p>
+    </div>
+
+<h3>git diff</h3>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git diff HEAD
+        </p>
+        <p>
+            Shows the difference between working directory and the last commit
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git diff --cached
+        </p>
+        <p>
+            shows difference between staged changes and last commit
+        </p>
+    </div>
+
+<h3>git reset</h3>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git reset
+        </p>
+        <p>
+            Reset staging area to match the most recent commit, but leave the working directory unchanged 
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git reset --hard
+        </p>
+        <p>
+            Reset staging area and working directory to match most recent commit <strong>overwrites all changes in the working directory</strong>
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git reset [commit]
+        </p>
+        <p>
+            Move the current branch tip backword to [commit], reset the staging area to match, but leave the working directory alone
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git reset --hard [commit]
+        </p>
+        <p>
+            Same as previous, but resets both the staging area and working directory to match/ Deletes uncommited changes and all commits after [commit]
+        </p>
+    </div>
+
+<h3>git rebase</h3>
+
+<div class="card"><!--Put a small card wrapper around each command-->
+    <p class="code">
+        git rebase -i [base]
+    </p>
+    <p>
+        Interactively rebase current branch onto [base], Launches editor to enter commands for how each commit will be transferred to the new base 
+    </p>
+</div>
+
+<h3>git pull</h3>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git pull --rebase [remote]
+        </p>
+        <p>
+            Fetch the remote's copy of current branch and rebases it into the local copy. Uses git rebase instead of merge to integrate the branches 
+        </p>
+    </div>
+
+<h3>git push</h3>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git push [remote] --force
+         </p>
+        <p>
+            Forces the git push even if it results in a non-fast-forward merge. <strong>Do not use the --force flag unless you're absolutely sure that you know what you're doing</strong>
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git push [remote] --all
+        </p>
+        <p>
+            Push all of your local branches to the specified remote
+        </p>
+    </div>
+
+    <div class="card"><!--Put a small card wrapper around each command-->
+        <p class="code">
+            git push [remote] --tags
+        </p>
+        <p>
+            Tags aren't automatically pushed when you push a branch of use the --all flag. The --tags flag sends all of your local tags to the remote repo
+        </p>
+    </div>
+    
 </body>
 </html>
