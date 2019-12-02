@@ -110,6 +110,10 @@ a {
     font-weight: bold;
 }
 
+ol {
+    list-style-type: none; 
+}
+
 /* different unordered list classes for different code - some replace the dot with a # for linux commands, others will help with html and other code */ 
 /* nav with main sections - html css git bootstrap */
 /* media query that changes the nav section to a hamburger menu on mobile */
