@@ -1,0 +1,46 @@
+var car1 = {
+	make: "Nissan",
+	model: "240sx",
+	engine: "LS"	,
+	trans: "t5-6",
+	sisterCars:[],
+	power: 800,
+	weight: 2400,
+	timeSlip: function() {
+		return (Math.cbrt(this.weight / this.power) * 6.28).toFixed(2); //this. refrences the object that the function is in 
+	},
+	pastOwner: {
+		name: "Lucas",
+		modifications: [ "red top sr20t", "fresh paint", "s14 interior", "silvia front end swap" ]
+		}, 
+}
+
+var car2 = {
+	make: "DSM",
+	"model": "Eclipse", // we can surround with quotes if we want to 
+	engine: "4g63t"	, // but don't have to 
+	trans: "FWD",
+	"sister cars":["talon", "laser"], // if the string has spaces in it we need quotes 
+	power: 300,
+	weight: 1800,
+	timeSlip: function() {
+		return (Math.cbrt(this.weight / this.power) * 7).toFixed(2);
+	},
+    	pastOwner: {
+        	name: "Johnna",
+        	"old mods": [ "rollcage", "clutch", "manual boost controller", "siren" ]
+		}, 
+}
+
+
+console.log(car1["make"]) //here we access a value through bracket notation 
+console.log("the " + car1["model"] + " has " + car1["power"] + " horsepower") // same thing just a bit more complex 
+console.log(car2["sister cars"]) // we have to use bracket notation if the name has spaces in it
+console.log(car1.timeSlip()) //we log out the product of the function timeSlip stored in car1 
+console.log("The " + car2["model"] + " makes " + car2.power + " hp and goes " + car2.timeSlip() + " in the quareter mile") 
+console.log("the " + car2.model + " has " + car2["sister cars"].length + " sister cars") // you can access arrays and their properties 
+console.log("the " + car1.model + " has " + car1.sisterCars.length + " sister cars") // same, but using dot notation where we can 
+console.log(typeof car1.weight) // accessing properties 
+console.log(car1.pastOwner.name) //we can put objects within other objects and access them the same way 
+console.log(car1.pastOwner.modifications.indexOf("fresh paint")) //accessing the properties of something buried deep in our objects 
+console.log(car2.pastOwner["old mods"].indexOf("fresh paint")) // the same thing but with bracket notation (returns -1 because the item is not part of the array)

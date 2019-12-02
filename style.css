@@ -1,6 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    word-wrap: break-word;
 }
 
 /* Start Nav-------------*/
@@ -61,10 +62,17 @@ h3 {
 
 .wrap {
     display: inline-block;
-    margin: 0px 10px 0px 10px;
+    margin: 30px 10px 0px 10px;
     padding: 0px 20px 10px 20px;
-    width: 60%;
-    /* box-shadow: 20px 20px 50px 15px grey; */
+    width: 70%;
+    box-shadow: 5px 5px 20px 5px grey;
+}
+
+h1.code, 
+h2.code,
+h3.code {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .code {
@@ -75,6 +83,16 @@ h3 {
     padding: 20px 20px 20px 20px;
 }
 
+.example {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    background-color: black;
+    color: rgb(103, 255, 65);
+    padding: 20px 20px 20px 20px;
+    display: inline-block;
+    width: 90%;
+}
+
 .card {
     display: inline-block;
     margin: 10px 10px 10px 10px;
@@ -83,11 +101,9 @@ h3 {
     /* border: 2px solid black; */
 }
 
-.card p > p { /*second paragraph - used for description */
-}
-
-.card > p { /*first paragraph - used for code */
-
+a {
+    color: rgb(56, 139, 35);
+    font-weight: bold;
 }
 
 /* different unordered list classes for different code - some replace the dot with a # for linux commands, others will help with html and other code */ 

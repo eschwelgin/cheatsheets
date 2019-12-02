@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”utf-8” />
+    
+    <title>the137 Cheat Sheets - JavaScript</title>
+    
+    <link rel='stylesheet' type='text/css' media='screen' href=style.css>
+
+	<!--[if lt IE 9]>
+    		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  	<![endif]-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<body>
+
+    <div class="nav">
+        <a href="index.html"><h1>The137 Cheat Sheets - JavaScript</h1></a>
+        <a href="js.html"><img src="assets/js.png" alt="JavaScript Icon"></a>
+        <a href="#"><img src="assets/bs.png" alt="BootStrap Icon"></a>
+        <a href="#"><img src="assets/css.png" alt="CSS Icon"></a>
+        <a href="#"><img src="assets/html.png" alt="HTML Icon"></a>
+        <a href="git.html"><img src="assets/git.png" alt="Git Icon"></a>
+    </div>
+    
+    <h1>Here is the JavaScript we talked about weeks 3 and 4 </h1>
+
+    
+    <h2>How to use JavaScript in your HTML</h2>
+
+        <div class="card">
+            <div class="wrap">
+                <p class="code">&lt;script src="link"&gt;&lt;/script&gt;</p>
+                <p>Embedding JS in HTML</p>
+            </div>
+        </div> 
+    
+        <div class="card">
+            <div class="wrap">
+                <p class="code">&lt;script&gt;/path/to/script.js&lt;/script&gt;</p>
+                <p>Linking JS in HTML</p>
+            </div>
+        </div>
+    
+    <h2>Basic JS</h2>
+
+    <div class="wrap">
+        <h2 class="code">var name = </h2>
+        <p>Declaring a variable</p>
+        <p class="example">
+            var name = "" // declaring it as a blank string<br/>
+            var name = 0 // declaring it as a number <br/>
+            var name = [] // declaring it as an array - arrays should always have similar data, different answers to the same question <br/>
+            var name = true //declaring it as boolean<br/>
+        </p>
+        <p>useful for declaring global variables that will be used within functions, <br/>
+            or for declarinig variables that will get their values later in the code </p>
+    </div>
+   
+    <div class="card">
+        <div class="wrap">
+            <h2 class="code">alert( )</h2>
+            <p>used for notifying the user </p>
+            <p class="example">alert("this is a statment")</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="wrap">
+            <h2 class="code">confirm( )</h2>
+            <p>used for asking the user a yes or no question, which can be saved as a bolean variable </p>
+            <p class="example">confirm("is this true or false")</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="wrap">
+            <h2 class="code">prompt( )</h2>
+            <p>used for asking a question that the user will type out a string to answer
+                such as their name, favorite xx or pets name</p>
+            <p class="example">prompt("this is a question, the user will answer with a string")</p>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">console.log( )</h2>
+        <p>used to display data in the console </p>
+        <p class="example">console.log("Your total is " + varPrice) // will console log the string and the price stored in the variable</p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">if ( ) { 
+                        } else { 
+                        }</h2> 
+        <p>conditional statments execute different code depending on the truth value of the statment in the (parenthesis), and the code is found in the {curley brackets}  </p>
+        <p class="example">
+            if (statment is true) {  <br/>
+            &nbsp;&nbsp;execute this <br/>
+            } else if (this 2nd statement is true) { <br/>
+            &nbsp;&nbsp;execute this one <br/>
+            } else { <br/>
+            &nbsp;&nbsp;if all else fails do this <br/>
+            }  <br/>
+            <br/>
+            var truth = true <br/>
+            if (truth === true) { <br/>
+            &nbsp;&nbsp;alert("true")  <br/>
+            } else if (truth === false) { <br/>
+            &nbsp; &nbsp;alert("false") <br/>
+            } else { <br/>
+            &nbsp; &nbsp;alert("variable is not boolean")  <br/>
+            }
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.length( )</h2>
+        <p>returns the length of a variable or array </p>
+        <p class="example">
+            var variable = [ "q", "w", "e", "r", "t", "y" ] <br/>
+            <br/>
+            console.log(variable.length) // logs the length (in this case 6) <br/>
+            console.log(variable[2]) // logs the third item in an array (arrays start at [0]) <br/>
+            console.log(variable[variable.length - 2]) // logs "t"  
+            </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.indexOf( )</h2>
+        <p>searches an array for a value</p>
+        <p class="example">
+            var list = ["bassnectar", "glitch mob", "marvel years", "grizmatik"] // creates an array<br/>
+            console.log(list.indexOf("bassnectar")) // returns 0 <br/>
+            console.log(list.indexOf("grizmatik")) // returns 3 <br/>
+            console.log(list.indexOf("govinda")) // returns -1 becaue it is not in the array <br/>
+            </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.parseInt( )</h2>
+        <p>can be used to change strings to integers <br/>
+            (but has other uses well beyond the scope of this document <a href= https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt>see here</a>)</p>
+        <p class="example">
+            var myAge = "5" // in this example we see parseInt change a value from a string to an integer <br/>
+            console.log(myAge + 2) // unexpected output<br/>
+            console.log(parseInt(myAge) + 2) // expected output <br/>
+        </p>
+    </div>
+    
+    <div class="wrap">
+        <h2 class="code">.toLowerCase( )</h2>
+        <p>changes strings to all lower case</p>
+        <p class="example">
+            var names = [ "Eric", "Beth", "Tim", "Autumn", "Dom", "Maria" ] <br/>
+            console.log(names[0]) // logs "Eric" <br/>
+            console.log(names[5].toLowerCase()) // logs "maria" 
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">for (var i = 0; i &lt; vr; i++) { }</h2>
+        <p>for loops </p>
+        <p class="example">
+            var variable = [ "q", "w", "e", "r", "t", "y" ] <br/>
+            <br/>
+            for (var i = 0; i &lt; variable.length; i++) { //basic syntax<br/>
+            &nbsp;&nbsp;console.log(variable[i]) //lists every value in the array<br/>
+            } <br/>
+            <br/>
+            for (var i = 0; i &lt; 10; i++) { // Loops from 0 to 9.<br/>
+            &nbsp;&nbsp;console.log("My value is " + i); // Prints a message and the current i value to the console.<br/>
+            } <br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.charAt( )</h2>
+        <p>reads a character in a string</p>
+        <p class="example">
+            var myName = "Eric" <br/>
+            <br/>
+            console.log(myName.charAt(0)) //logs "E" <br/>
+            console.log(myName.charAt(0).toLowerCase()) //logs "e"<br/>
+            <br/>
+            if (myName.charAt(0) === "E") { <br/>
+            &nbsp;&nbsp;console.log("match")<br/>
+            } else {<br/>
+            &nbsp;&nbsp;console.log("not a match")<br/>
+            } <br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h3>hard loops // this loop checks the entire array for a condition (I can't find an actual definition for a "hard loop") </h3>
+        <p class="example">
+                var variable = [ "Eric", "Beth", "Tim", "Autumn", "Dom", "Maria" ] <br/>
+                <br/>
+                for (var i = 0; i < variable.length; i++) {<br/>
+                    &nbsp;&nbsp;console.log(variable[i]) // logs each item in the array<br/>
+                    &nbsp;&nbsp;if (variable[i].charAt(0) === "E") {<br/>
+                    &nbsp;&nbsp;console.log("This item starts with an E")<br/>
+                    &nbsp;&nbsp;}<br/>
+                  } <br/>
+            </p>
+    </div>
+
+    
+    
+            <div class="card">
+                <div class="wrap">
+                    <h2 class="code">=</h2>
+                    <p>= is used to set a variable</p>
+                    <p class="example">var = value</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="wrap">
+                    <h2 class="code">==</h2>
+                    <p>== is used to compare values, but is not "strict" </p>
+                    <p class="example">1 == "1" // returns true</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="wrap">
+                    <h2 class="code">===</h2>
+                    <p>=== compares values, "strict", meaning both type (string, numeric, boolean, etc..) and value are equal</p>
+                    <p class="example">
+                        1 === "1" // returns false because the first value is a number, and the second value is a string <br/>
+                        <br/>
+                        4 === 4 // returns true
+
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    
+        <div class="card">
+            <div class="wrap">
+                <h2 class="code">&&</h2>
+                <p>double ampersand = logical AND</p>
+                <p class="example">
+                    var a = 1 <br/>
+                    var b = 2 <br/>
+                    <br/>
+                    console.log(a === 1 && b === 1) // returns false 
+                </p>
+            </div>
+        </div> 
+
+        <div class="card">
+            <div class="wrap">
+                <h2 class="code">||</h2>
+                <p>double pipe = logical OR</p>
+                <p class="example">
+                    var a = 1 <br/>
+                    var b = 2 <br/>
+                    <br/>
+                    console.log(a === 1 || b === 1) // returns true 
+                </p>
+            </div>
+        </div>    
+
+        <div class="card">
+            <div class="wrap">
+                <h2 class="code">!</h2>
+                <p>logical NOT</p>
+                <p class="example">
+                        var a = 1 <br/>
+                        var b = 2 <br/>
+                        <br/>
+                        console.log(b !== 1) // returns true <br/>
+                        console.log(a !== b) // returns true 
+                </p>
+            </div>
+        </div>
+
+    <div class="wrap">
+        <h2 class="code">Math.random </h2>
+        <p>produces random numbers</p>
+        <p class="example">
+            var rando = Math.random() * 10 // produces a number between 1 and 10 (Math.random produces a number between 0 and 1,
+            multiplying it by 10 gives us our range, for example if Math.random produces 0.41 and we multiply it by 10 we get 4.1
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">Math.floor( )</h2>
+        <p>rounds down to the next integer </p>
+        <p class="example">
+                console.log(Math.floor(4.1)) // logs 4<br/>
+                <br/>
+                console.log(Math.floor(Math.random() * 10 + 1) // produces a number between 1 and 10 ( if we don't add 1 the range becomes 0-9 since Math.floor() is always rounding down) 
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2>basic input sanitation</h2>
+        <p class="example">
+                var validInput = [ "q", "w", "e", "r", "t", "y" ] // valid inputs<br/>
+                userInput = prompt("Enter Q W E R T or Y") <br/>
+                inputLC = userInput.toLowerCase()<br/>
+                <br/>
+                if (userInput = inputLC) {	<br/>
+                    &nbsp;&nbsp;//continue running logic / nested logic<br/>
+                    &nbsp;&nbsp;} else { 	<br/>
+                    &nbsp;&nbsp;alert("Please try again") <br/>
+                    &nbsp;&nbsp;}<br/>
+                }
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">nested arrays</h2>
+        <p>You can create a variable of arrays, which each are their own array</p>
+        <p class="example">
+            var rockMus = [ "mushroomhead", "atreyu", "rage against the machine", "3teeth" ] <br/>
+            var edmMus = [ "bassnectar", "glitch mob", "marvel years", "grizmatik" ]<br/>
+            var rapMus = [ "biggie", "sts", "cudi", "immortal technique" ]<br/>
+            <br/>
+            var music = [rockMus, edmMus, rapMus] <br/>
+            <br/>
+            console.log(music[0][0]) // logs mushroomhead<br/>
+            console.log(music[0][2]) // logs ratm <br/>
+            console.log(music[1][0]) // logs bassnectar <br/>
+            console.log(music[2][3]) // logs immortal technique<br/>
+            <br/>
+            //log all values in nested arrays <br/>
+            for ( i = 0; i < music.length; i++) {<br/>
+                &nbsp;&nbsp;for (j = 0; j < music[i].length; j++) {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(music[i][j])<br/>
+                &nbsp;&nbsp;}<br/>
+            }<br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">function( )</h2>
+        <p>The best way to do anything in JavaScript. Functions can do anything</p>
+        <p class="example">
+                function newFunction(data) { // create our function <br/>
+                    &nbsp;&nbsp;console.log(data)<br/>
+                }<br/>
+                <br/>
+                newFunction(variable) // call our function and feed it our variable, it logs the value <br/>
+                <br/>
+                --<br/>
+                <br/>
+                function newFunct() {<br/>
+                    &nbsp;&nbsp;console.log("you can use a function for anything") <br/>
+                    &nbsp;&nbsp;console.log("feed it data in the parenthesis") 	<br/>
+                    &nbsp;&nbsp;console.log("and everything within the {} will execute when you call it") <br/>
+                }<br/>
+                <br/>
+                newFunct() //call our function<br/>
+                <br/>
+                --<br/>
+                <br/>
+                //create our arrays<br/>
+                var rockMus = [ "mushroomhead", "atreyu", "rage against the machine", "3teeth" ] <br/>
+                var edmMus = [ "bassnectar", "glitch mob", "marvel years", "grizmatik" ]<br/>
+                var rapMus = [ "biggie", "sts", "cudi", "immortal technique" ]<br/>
+                <br/>
+                //write a function to log the data within any array we feed it <br/>
+                function complex(data) {<br/>
+                    &nbsp;&nbsp;for (i = 0; i < data.length; i++) {<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(data[i]) <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                    &nbsp;&nbsp;}<br/>
+                    <br/>
+                //call our function, and feed it various arrays  <br/>
+                complex(rockMus)<br/>
+                complex(edmMus)<br/>
+                complex(rapMus)<br/>
+                <br/>
+                --<br/>
+                <br/>
+                function add(x, y, z) {<br/>
+                    &nbsp;&nbsp;return x + y + z<br/>
+                } <br/>
+                <br/>
+                console.log(add(2, 3, 2))<br/>
+                var a = add(1, 2, 3) <br/>
+                console.log(a)<br/>
+            <br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">return</h2>
+        <p>returns an answer and stops the function that called it </p>
+        <p class="example">
+            //create arrays <br/>
+            var rockMus = [ "atreyu" ] <br/>
+            var edmMus = [ "bassnectar", "glitch mob", "marvel years", "grizmatik" ]<br/>
+            var rapMus = [ "sts", "cudi", "immortal technique" ]<br/>
+            <br/>
+            //create our function <br/>
+            function length(data) {<br/>
+                &nbsp;&nbsp;return(data.length)	<br/>
+            }<br/>
+            <br/>
+            //call our function    <br/>
+            var x = length(rockMus)<br/>
+            var y = length(edmMus)<br/>
+            var z = length(rapMus)<br/>
+            <br/>
+            //log the results<br/>
+            console.log(x)<br/>
+            console.log(y)<br/>
+            console.log(z)<br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">typeof</h2>
+        <p>returns the type of value of a variable 
+                (but has other uses well beyond the scope of this document <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">see here</a>)</p>
+        <p class="example">
+                var variable = 6<br/>
+                var edmMus = [ "bassnectar", "glitch mob", "marvel years", "grizmatik" ]<br/>
+                var name = "Eric"<br/>
+                var truth = false<br/>
+                <br/>
+                console.log(typeof variable) //logs number<br/>
+                console.log(typeof edmMus) //logs object<br/>
+                console.log(typeof name) //logs string<br/>
+                console.log(typeof truth) //logs boolean<br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">Objects</h2>
+        <p>complex data type that can hold anything from variable, to arrays, other objects, functions etc..</p>
+        <img class="example" src="assets/obj.png">
+        <p>The text version of this object can be found <a href="assets/obj.txt">here</a> for testing</p>    
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">this.</h2>
+        <p>refers to the object holding it</p>
+        <p class="code">see "objects"</p>    
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">objects in arrays</h2>
+        <p>basic syntax</p>
+        <p class="code"> 
+                var array = [<br/>
+                &nbsp;&nbsp;{ q: "2+2", a: 4 },<br/>
+                &nbsp;&nbsp;{ q: "4+2", a: 6 },<br/>
+                &nbsp;&nbsp;{ q: "red is blue", a: false },<br/>
+                &nbsp;&nbsp;{ q: "i am groot", a: "huh?" }<br/>
+                ] <br/>
+                <br/>
+                console.log(array[0].q)<br/>
+                console.log(array[3].a)</p>    
+    </div>
+
+    <div class="card" style="width: 40%;">
+        <div class="wrap">
+            <h2 class="code">The Window Object</h2>
+            <p>The window object contains a plethora of information </p>
+            <p class="code">
+                console.log(window) // do this in dev tools <br/>
+                <br/>
+                console.log(window.screen.width)<br/>
+                console.log(window.location.href)</p>    
+        </div>
+    </div>
+    <div class="card" style="width: 40%;">
+        <div class="wrap">
+            <h2 class="code">The Navigator object</h2>
+            <p>The window object contains a plethora of information </p>
+            <p class="code">
+                console.log(window) // do this in dev tools <br/>
+                <br/>
+                console.log(window.screen.width)<br/>
+                console.log(window.location.href)</p>    
+        </div>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">Traversing the DOM</h2>
+        <p>Everything in an HTML document is a node </p>
+        <p class="code">
+            console.log(document.body) //html body
+            console.log(document.body.children) //all children of body 
+            console.log(document.body.children[3]) //4th child
+            console.log(document.body.children[3].childNodes[7].parentElement.style.color = "red"); //change the style of selected nodes
+        </p>
+        <p style="text-align: left;">All nodes can be accessed by javascript <br/>
+        New nodes can be created, and all nodes can be modified or deleted <br/>
+        
+        Nodes have a hierarchical relationship to each other.<br/>
+        the terms parent, child and sibling can also be used <br/>
+        <br/>
+        You can use the following node properties to navigate between nodes with JavaScript:<br/>
+        &nbsp;&nbsp;parentNode<br/>
+        &nbsp;&nbsp;childNodes[nodenumber]<br/>
+        &nbsp;&nbsp;firstChild<br/>
+        &nbsp;&nbsp;lastChild<br/>
+        &nbsp;&nbsp;nextSibling<br/>
+        &nbsp;&nbsp;previousSibling<br/>
+        </p>  
+        <p class="code">
+            //these examples all retrieve the text from one element(head1) and copy it to second element(para)<br/>
+            document.getElementById("para").innerHTML = document.getElementById("head1").innerHTML;<br/>
+            document.getElementById("para").innerHTML = document.getElementById("head1").firstChild.nodeValue;<br/>
+            document.getElementById("para").innerHTML = document.getElementById("head1").childNodes[0].nodeValue;<br/>
+            document.getElementById("para").textContent = document.getElementById("head1").childNodes[0].textContent;<br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.querySelector( ) and .querySelectorAll( )</h2>
+        <p>querySelector returns the first hit it finds, while querySelectorAll returns all matching nodes</p>
+        <p class="code"> 
+            var pTags = document.querySelectorAll("p") //returns all paragraph tags<br/>
+            var pTags = document.querySelector("p") //returns the first paragraph tag it finds
+            </p>   
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.setAttribute( )</h2>
+        <p>allows you to dynamically set an attribute, such as href to a tags, or scr to images</p>
+        <p class="code">             
+            &lt;h1 id="head1"&gt;this is a heading&lt;/h1&gt;<br/>
+            &lt;p id="para"&gt;...&lt;/p&gt;<br/>
+            &lt;p&gt;para2&lt;/p&gt;<br/>
+            &lt;a&gt;This is a link&lt;/a&gt;<br/>
+            &lt;img id="img1"&gt;<br/>
+            &lt;img class="clas"&gt;<br/>
+            <br/>
+            var aTags = document.querySelector("a")<br/>
+            aTags.setAttribute("href", "http://google.com")<br/>
+            <br/>
+            var imgTags = document.querySelector("img")<br/>
+            imgTags.setAttribute("src", "https://www.w3schools.com/js/pic_htmltree.gif")<br/>
+            <br/>
+            var imgTags = document.querySelectorAll("img")<br/>
+            imgTags[0].setAttribute("src", "https://www.w3schools.com/js/pic_htmltree.gif")<br/>
+            imgTags[1].setAttribute("src", "https://www.w3schools.com/js/pic_htmltree.gif")<br/>
+            <br/>
+            var imgTag1 = document.querySelector("#img1")<br/>
+            imgTag1.setAttribute("src", "https://www.w3schools.com/js/pic_htmltree.gif")<br/>
+            <br/>
+            var clas = document.querySelector(".clas")<br/>
+            clas.setAttribute("style", "border:1px solid black;")<br/>
+            </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.innerHTML</h2>
+        <p>allows you to insert html into a node</p>
+        <p class="code">
+            document.getElementById("para").innerHTML = "This text was created with JS"
+            document.getElementById("para").innerHTML = "&lt;h1&gt;A dynamic heading appears&lt;/h1&gt;"
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.textContent</h2>
+        <p>similar to innerHTML but a better choice from a security standpoint</p>
+        <p class="code">
+            document.getElementById("para").textContent = "This text was created with JS"
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.createElement( ) and .appendChild( )</h2>
+        <p>Creates and appends new HTML to the bottom of an html doc</p>
+        <p class="code">
+                var tag = document.createElement("h1")<br/>
+                <br/>
+                tag.textContent = "This H1 was made via prompts"<br/>
+                document.body.appendChild(tag)<br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">basic timer function and clearInterval( )</h2>
+        <p class="code">
+            var secondsLeft = 10;<br/>
+            <br/>
+            function setTime() {<br/>
+                <br/>
+                &nbsp;&nbsp;var timerInterval = setInterval(function() {<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;secondsLeft--;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;//code to run or display while timer is running goes here <br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(secondsLeft === 0) {<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearInterval(timerInterval);<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//code to run or display when timer runs out goes here <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                &nbsp;&nbsp;}, 1000); //interval in ms <br/>
+            }<br/>
+            setTime();
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.split( )</h2>
+        <p>turns a string into an array</p>
+        <p class="code">
+            .split(" ") //seperates at spaces<br/>
+            .split("") // seperates each letter <br/>
+            .split() // turns the entire string into the first value of an array <br/>
+            <br/>
+            var test = "this isnt a test, is it?"<br/>
+            test3 = test.split(" i") //seperates the original values whenever it finds " i" (space i) <br/>
+            console.log(test3) // expected output [ 'this', 'snt a test,', 's', 't?' ]<br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.addEventListener( )</h2>
+        <p>most often used to capture clicks on a specific node in the DOM, and run a block of js in responce to the click.<br/> .addEventListener can respond to any HTML DOM event, 
+            <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">see here</a>, but the most common events can be <a href="https://developer.mozilla.org/en-US/docs/Web/Events#Most_common_categories">
+                found here</a>.</p>
+        <p class="code">
+            Basic Syntax<br/>
+            var node = document.querySelector("#id")<br/>
+            node.addEventListener("click", function() {<br/>
+            });
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">event.preventDefault( )</h2>
+        <p>added to .addEventListener events to prevent the default behavior 
+            Often used to prevent forms from refreshing when they're submitted, or to prevent a link from being followed when the use clicks on it
+            .preventDefault is a wildly powerful tool, that can prevent mouse clicks, keystrokes or checkboxes being checked when a user clicks on them 
+            it also cancels any subsequent actions that the default action would have triggered 
+            </p>
+        <p class="code">
+            submit.addEventListener("click", function(event) {<br/>
+            event.preventDefault();<br/>
+            var response = "Thank you for your submission " + name.value<br/>
+            Response.textContent = response;<br/>
+            });
+        </p>
+    </div>
+
+
+
+
+
+</body>
+</html>
