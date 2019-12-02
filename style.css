@@ -68,6 +68,10 @@ h3 {
     box-shadow: 5px 5px 20px 5px grey;
 }
 
+.card>.wrap {
+    width: 90%;
+}
+
 h1.code, 
 h2.code,
 h3.code {
