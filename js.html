@@ -645,9 +645,240 @@
         </p>
     </div>
 
+    <div class="wrap">
+        <h2 class="code">.style( )</h2>
+        <p>changes css properties. 
+            hyphen notation is converted to camelcase 
+            </p>
+        <p class="code">
+            document.querySelector("#div").style.fontFamily = typeface;
+        </p>
+    </div>
 
+    <div class="wrap">
+        <h2 class="code">.forEach( )</h2>
+        <p>executes a provided function for each array element 
+            </p>
+        <p class="code">
+            var arr = ["a", "b", "c", "d"]<br/>
+            <br/>
+            arr.forEach(function(element) {<br/>
+                console.log(element) <br/>
+            })<br/>
+            <br/>
+            // expected output: a<br/>
+            // expected output: b<br/>
+            // expected output: c<br/>
+            // expected output: d
+        </p>
+    </div>
 
+    <div class="wrap">
+        <h2 class="code">.split( )</h2>
+        <p>splits strings into arrays at defined character 
+            </p>
+        <p class="code">
+            var char = "abcd".split("");<br/>
+            console.log(char)<br/>
+            // expected output [ 'a', 'b', 'c', 'd' ]<br/>
+            <br/>
+            var char = "ab,cd"<br/>
+            console.log(char.split(","))<br/>
+            // expected output [ 'ab', 'cd' ]
+        </p>
+    </div>
 
+    <div class="wrap">
+        <h2 class="code">+= and assignment operators </h2>
+        <p>x+=y is the same as x=x+y<br/>
+            <br/>
+            assignment operators add a value to a variable <br/>
+            other operators work the same way (-=, *=, /=, %=, **=) <br/>
+            there are even more, but beyond the scope of this doc <a href="https://www.w3schools.com/js/js_assignment.asp">see here</a>
+            </p>
+        <p class="code">
+            var x = 2 <br/>
+            var y = 3 <br/>
+            x+=y<br/>
+            console.log(x) <br/>
+            // expected output 5<br/>
+            <br/>
+            var x = 2 <br/>
+            var y = 3 <br/>
+            console.log(x = x+y)<br/>
+            console.log(x+=y)<br/>
+            // expected output 5 <br/>
+            // expected output 5 <br/>
+            // actual output 5 <br/>
+            // actual output 8 // because we're mutating the data twice, even by simply logging it. 
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">event bubbling and .stopPropagation()</h2>
+        <p>events bubble upward - if we have a button (with a click event) inside a div (with another click event) and we click the button, the div will recieve a click as well. <br/>
+            we can stop this with .stopPropagation() <br/>
+            run the following code and comment in and out the .stopPropagation() lines to see how it works <br/>
+            </p>
+        <p class="code">
+            &lt;!DOCTYPE html&gt;<br/>
+            &lt;head&gt;<br/>
+            &nbsp;&nbsp;&lt;style>div {margin: 30px;}&lt;/style&gt;<br/>
+            &lt;/head&gt;<br/>
+            &lt;body&gt;<br/>
+            &lt;div class="outer-div"&gt; Click me<br/>
+                &nbsp;&nbsp;&lt;div class="inner-div"&gt; Click me<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="button"&gt;Click me&lt;/button&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+                &nbsp;&nbsp;&lt;/div&gt;<br/>
+                &lt;/div&gt;<br/>
+                &lt;script&gt;<br/>
+                <br/>
+                &nbsp;&nbsp;var outer = document.querySelector(".outer-div");<br/>
+                &nbsp;&nbsp;var inner = document.querySelector(".inner-div");<br/>
+                &nbsp;&nbsp;var button = document.querySelector(".button");<br/>
+                <br/>
+                &nbsp;&nbsp;function btnClick(event) { <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;//event.stopPropagation();<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert("You clicked the button")<br/>
+                &nbsp;&nbsp;}<br/>
+                <br/>
+                &nbsp;&nbsp;function innerClick(event) { <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;//event.stopPropagation();<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert("You clicked the inner div")<br/>
+                &nbsp;&nbsp;}<br/>
+                <br/>
+                &nbsp;&nbsp;function outerClick(event) { <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;//event.stopPropagation();<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert("You clicked the outer div")<br/>
+                &nbsp;&nbsp;}<br/>
+                <br/>
+                &nbsp;&nbsp;outer.addEventListener("click", outerClick);<br/>
+                &nbsp;&nbsp;inner.addEventListener("click", innerClick);<br/>
+                &nbsp;&nbsp;button.addEventListener("click", btnClick);<br/>
+                <br/>
+            &lt;/script&gt;<br/>
+            &lt;/body&gt;<br/>
+            &lt;/html&gt;<br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">event delegation</h2>
+            <p class="code">
+                    &lt;body&gt;<br/>
+                    &nbsp;&nbsp;&lt;div class="container"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;form&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul id="list"&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id="0" &gt;<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opt0 &lt;button&gt;Add to Cart&lt;/button&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id="1"&gt;<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opt1 &lt;button&gt;Add to Cart&lt;/button&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id="2"&gt;<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opt2 &lt;button&gt;Add to Cart&lt;/button&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id="3"&gt;<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opt3 &lt;button&gt;Add to Cart&lt;/button&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id="4"&gt;<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opt4 &lt;button&gt;Add to Cart&lt;/button&gt;<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br/>
+                            &nbsp;&nbsp;&lt;div id="selected"&gt;<br/>
+                            &nbsp;&nbsp;&lt;/div&gt;<br/>
+                        &lt;/div&gt;<br/>
+                        &lt;script&gt;<br/>
+                        <br/>
+                        &nbsp;&nbsp;var list = document.querySelector("#list"); // for the click listener<br/>
+                        &nbsp;&nbsp;var selected = document.querySelector("#selected"); // to append new divs <br/>
+                        &nbsp;&nbsp;var arr = ["option0", "option1", "option2", "option3", "option4"];<br/>
+                          <br/>
+                        &nbsp;&nbsp;list.addEventListener("click", function(event) { // we create a listener on the ul node <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;event.preventDefault();<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if(event.target.matches("button")) { // the button creates the event we're looking for <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var item = document.createElement("div");<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.textContent = arr[event.target.parentElement.id]; // key here is parent element.id<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selected.append(item);<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                        &nbsp;&nbsp;})<br/>
+                        &lt;/script&gt;<br/>
+                        &lt;/body&gt;<br/>
+            </p>
+        </div>
+
+    <div class="wrap">
+        <h2 class="code">local storage </h2>
+        <p>store variables in local storage for retrival later 
+            </p>
+        <p class="code">
+                //setting a variable<br/>
+                var variable = ""<br/>
+                localStorage.setItem("variable", variable) // ("var name", var value)<br/>
+                <br/>
+                // retrieving a variable <br/>
+                var variable = localStorage.getItem("variable") <br/>
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.trim( )</h2>
+        <p>eliminates leading spaces and trailing spaces 
+            </p>
+        <p class="code">
+                var name = "    eric      " <br/>
+                console.log(name.trim())<br/>
+                //expected output "eric" 
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">JSON.stringify( ) and JSON.parse( )</h2>
+        <p>to store objects in local storage we have to stringify them on the way in and parse when we retrieve them  
+            </p>
+        <p class="code">
+                // Put the object into storage<br/>
+                localStorage.setItem("testObject", JSON.stringify(testObject))<br/>
+                <br/>
+                // Retrieve the object from storage<br/>
+                var retrievedObject = localStorage.getItem("testObject")<br/>
+                console.log(JSON.parse(retrievedObject))
+        </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.target( )</h2>
+        <p>returns the element that triggered the event, not always the eventListeners element  
+            </p>
+    </div>
+
+    <div class="wrap">
+        <h2 class="code">.setAttribute( ) and .getAttribute( )</h2>
+        <p>sets and retrieves attributes from a node 
+            </p>
+        <p class="code">
+                var imageContainer = document.querySelector(".img-container")<br/>
+                <br/>
+                imageContainer.addEventListener("click", function(event) {<br/>
+                    &nbsp;&nbsp;var element = event.target;<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (element.matches("img")) {<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var state = element.getAttribute("data-state");<br/>
+                        <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (state === "still") {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.setAttribute("data-state", "animate");<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.setAttribute("src", element.getAttribute("data-animate"));<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (state === "animate") {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.setAttribute("data-state", "still");<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.setAttribute("src", element.getAttribute("data-still"));<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                })<br/>
+        </p>
+    </div>
 
 </body>
 </html>
